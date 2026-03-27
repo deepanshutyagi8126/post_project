@@ -92,16 +92,6 @@
                             <p>Indicate specific skills and skill areas you want expertise in</p>
                         </span>
                     </li>
-                    <li class="duration_li">
-                        <span class="suggestion_img">
-                            <img src="images/project_duration.svg" class="non_active" alt="project_title">
-                            <img src="images/project_duration_active.svg" class="active" alt="project_title">
-                        </span>
-                        <span class="suggestion_content">
-                            <h2>Project Duration</h2>
-                            <p>How long do you anticipate the project will run for?</p>
-                        </span>
-                    </li>
                     <li class="nature_li">
                         <span class="suggestion_img">
                             <img src="images/work_nature.svg" class="non_active" alt="project_title">
@@ -130,7 +120,7 @@
                             <input type="text" class="form-control common_input"
                                 placeholder="Eg. Market Research Consultant">
                             <div class="suggestion_box siggestion_for_title">
-                                <p>Suggested Project drafts based on your Broad Skill <b>Human Resource</b></p>
+                                <p>Suggested Project drafts for <b>Human Resource</b>.Explore more project drafts</p>
                                 <ul>
                                     <li>Finance Controller for a startup</li>
                                     <li>Cost Transformation Consultant</li>
@@ -325,6 +315,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="bugget_checkbox">
+                                        <div class="custom-checkbox">
+                                            <input type="checkbox" id="noBudget">
+                                            <label for="noBudget">
+                                                <span class="checkmark"></span>
+                                                I do not have a budget in mind right now
+                                            </label>
+                                        </div>
+                                    </div>
                                     <div class="buget_error_show"></div>
                                 </div>
                                 <div class="buget_right">
@@ -346,15 +345,13 @@
                                 <textarea class="form-control common_input"
                                     placeholder="Enter additional comments"></textarea>
                             </div>
-                            <a href="javascript:void(0)" class="all_comments"><img src="images/Add_ring_light.svg"
-                                    alt="add"> <span>Add another question</span></a>
                         </div>
                     </div>
                     <div class="footer_btns last_step">
                         <div class="all_btns_clicked">
                             <a href="post_your_project_manual_1.html" class="footer_back">Back</a>
                             <div class="footer_right_btn">
-                                <a href="javascript:void(0)" class="footer_save">Save & Exit</a>
+                                <!-- <a href="javascript:void(0)" class="footer_save">Save & Exit</a> -->
                                 <a href="javascript:void(0)" class="common_hover_btn submit_your_req">
                                     <span class="hover_btn_content">Submit your project requirement</span>
                                     <span class="hover_btn_sign">
@@ -381,12 +378,13 @@
                                 <h2>Congratulations!</h2>
                                 <p>Your requirement is saved successfully.</p>
                                 <div class="form-group">
-                                    <label for="">Enter your email address to authenticate your project.</label>
+                                    <label for="">Enter your work email to authenticate your project.</label>
                                     <input type="email" class="form-control common_input"
                                         placeholder="Enter your work email">
                                 </div>
                                 <div class="modal_btns">
-                                    <a href="javascript:void(0)" data-dismiss="modal" class="cancel_btns cancel_modal">Cancel</a>
+                                    <a href="javascript:void(0)" data-dismiss="modal"
+                                        class="cancel_btns cancel_modal">Cancel</a>
                                     <a href="javascript:void(0)" class="Send_otp">Send OTP</a>
                                 </div>
                             </div>
@@ -398,7 +396,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <button type="button" class="close modal_closed cancel_modal" data-dismiss="modal" ><img
+                            <button type="button" class="close modal_closed cancel_modal" data-dismiss="modal"><img
                                     src="images/modal_close.svg" alt="close"></button>
                             <div class="modal_inner_content">
                                 <p>Enter your OTP to complete authentication &
@@ -416,7 +414,8 @@
                                             href="javascript:void(0)">Resend</a></p>
                                 </div>
                                 <div class="modal_btns">
-                                    <a href="javascript:void(0)" data-dismiss="modal" class="cancel_btns cancel_modal">Cancel</a>
+                                    <a href="javascript:void(0)" data-dismiss="modal"
+                                        class="cancel_btns cancel_modal">Cancel</a>
                                     <a href="javascript:void(0)" class="otp_submit">Submit</a>
                                 </div>
                             </div>

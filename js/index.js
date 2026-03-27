@@ -134,7 +134,21 @@ $(document).on('click', '.buget_curr ul li', function () {
   $(this).parent('ul').hide();
   $(this).parent('ul').siblings('.curr_dropdown').removeClass('slide_drop');
 });
+$(document).on('click','.bugget_checkbox .custom-checkbox label',function(){
+$(this)
+  .parents('.bugget_checkbox')
+  .siblings('.buget_details')
+  .find('.buget_details_in')
+  .removeClass('active max_height_width');
+  $(this)
+  .parents('.bugget_checkbox')
+  .siblings('.buget_details')
+  .find('.buget_details_in').find('input').val('');
+  $('.buget_error_show').removeClass('error_class');
+   $('.buget_error_show').find('p.error_message').remove();
+});
 $(document).on('click', '.buget_details_in', function () {
+      $(".bugget_checkbox .custom-checkbox input").prop("checked", false);
   $('.buget_details_in').addClass('max_height_width').removeClass('active');
   $(this).removeClass('max_height_width').addClass('active');
   $('.buget_error_show.error_class p').remove();
@@ -240,7 +254,8 @@ $(document).on('click', '.projects_title input.form-control.common_input', funct
 });
 $(document).on('click', '.suggestion_box ul li ', function () {
   $('.projects_title input').val($(this).text());
-  $('.suggestion_box.siggestion_for_title').hide();
+  $(this).parents('.projects_title').removeClass('error_class').find('p.error_message').remove();
+  // $('.suggestion_box.siggestion_for_title').hide();
 });
 $(document).on('focus', 'input.form-control.common_input', function () {
   $(this).parents('.error_class').removeClass('error_class').find('p.error_message').remove();
@@ -255,7 +270,7 @@ $(document).on('click', function (e) {
 });
 $(document).on('click', function (e) {
   if ($(e.target).closest('.projects_title input,.suggestion_box.siggestion_for_title').length === 0) {
-    $('.suggestion_box.siggestion_for_title').hide();
+    // $('.suggestion_box.siggestion_for_title').hide();
   }
 });
 $(document).on('click', '.post_a_project_manually.footer_btns a.common_hover_btn', function () {
@@ -366,51 +381,63 @@ $(document).on('click', '.footer_btns.last_step a.submit_your_req', function () 
   var buget_range_from = $('.buget_details_in.active input.form-control.from_range').val();
   var buget_range_to = $('.buget_details_in.active input.form-control.to_range').val();
   var addtional_comment = $('.addtional_comment textarea').val();
+var buget_var = $('.bugget_checkbox .custom-checkbox input').prop('checked');
   var skill_tags = [];
   $('ul.added_skill_tags li').each(function () {
     var skill = $(this).find('span.tag_name').text().trim();
     skill_tags.push(skill);
   });
-  if (project_title !== '' && projects_description !== '' && Work_nature !== '' && buget_details_in !== '' && buget_currency != '' && buget_range_from !== '' && buget_range_to != '') {
+if (
+  project_title !== '' &&
+  projects_description !== '' &&
+  Work_nature !== '' &&
+  (
+    buget_var === true || 
+    (
+      buget_details_in !== '' &&
+      buget_currency !== '' &&
+      buget_range_from !== '' &&
+      buget_range_to !== ''
+    )
+  )
+) {
   $('#enter_your_email').show();
+}
+else {
+
+  if (!project_title) {
+    $('.projects_title').addClass('error_class');
+    $('.projects_title p.error_message').remove();
+    $('.projects_title').append(`<p class="error_message">Please fill the project title.</p>`);
+  } else {
+    $('.projects_title').removeClass('error_class');
+    $('.projects_title p.error_message').remove();
   }
-  else {
-    if (!project_title) {
-      $('.projects_title').addClass('error_class');
-      $('.projects_title p.error_message').remove();
-      $('.projects_title').append(`<p class="error_message">Please fill the project title.</p>`);
-    }
-    else {
-      $('.projects_title').removeClass('error_class');
-      $('.projects_title p.error_message').remove();
-    }
-    if (!projects_description) {
-      $('.projects_description').addClass('error_class');
-      $('.projects_description p.error_message').remove();
-      $('.projects_description').append(`<p class="error_message">Please fill the project description.</p>`);
-    }
-    else {
-      $('.projects_description').removeClass('error_class');
-      $('.projects_description p.error_message').remove();
-    }
+
+  if (!projects_description) {
+    $('.projects_description').addClass('error_class');
+    $('.projects_description p.error_message').remove();
+    $('.projects_description').append(`<p class="error_message">Please fill the project description.</p>`);
+  } else {
+    $('.projects_description').removeClass('error_class');
+    $('.projects_description p.error_message').remove();
+  }
+
+  if (!buget_var) {
+
     var $container = $('.buget_error_show');
 
-    // reset
     $container.addClass('error_class');
     $container.find('.error_message').remove();
 
     if (!buget_details_in) {
-
       $container.append('<p class="error_message">Please select a suitable budget.</p>');
-
-    } else if (!buget_currency || !buget_range_from || !buget_range_to) {
-
+    } 
+    else if (!buget_currency || !buget_range_from || !buget_range_to) {
       $container.append('<p class="error_message">Please fill all mandatory details.</p>');
-
     }
 
     $('.buget_details_in.active input.form-control').each(function () {
-
       var value = $(this).val().trim();
 
       if (value === '') {
@@ -418,10 +445,15 @@ $(document).on('click', '.footer_btns.last_step a.submit_your_req', function () 
       } else {
         $(this).removeClass('empty_class');
       }
-
     });
 
+  } else {
+    $('.buget_error_show').removeClass('error_class');
+    $('.buget_error_show .error_message').remove();
+    $('.buget_details_in input').removeClass('empty_class');
   }
+
+}
   var $firstError = $('.error_class:visible').first();
 
   if ($firstError.length > 0) {
@@ -491,14 +523,14 @@ $(document).on('click', 'a.Send_otp', function (e) {
   if (mail_val === '') {
     $('.modal_inner_content_2 .form-group ').addClass('error_class');
     $('.modal_inner_content_2 .form-group p.error_message').remove();
-    $('.modal_inner_content_2 .form-group').append(`<p class="error_message">Please enter email address</p>`);
+    $('.modal_inner_content_2 .form-group').append(`<p class="error_message">Please enter work email</p>`);
     return;
   }
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(mail_val)) {
     $('.modal_inner_content_2 .form-group ').addClass('error_class');
     $('.modal_inner_content_2 .form-group p.error_message').remove();
-    $('.modal_inner_content_2 .form-group').append(`<p class="error_message">Please enter valid email address</p>`);
+    $('.modal_inner_content_2 .form-group').append(`<p class="error_message">Please enter valid work email</p>`);
     return;
   }
   $('#enter_your_email').hide();
@@ -513,14 +545,14 @@ $(document).on('click', '.submit_email', function (e) {
   if (mail_val === '') {
     $('.modal_inner_content_3 .form-group ').addClass('error_class');
     $('.modal_inner_content_3 .form-group p.error_message').remove();
-    $('.modal_inner_content_3 .form-group').append(`<p class="error_message">Please enter email address</p>`);
+    $('.modal_inner_content_3 .form-group').append(`<p class="error_message">Please enter work email</p>`);
     return;
   }
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(mail_val)) {
     $('.modal_inner_content_3 .form-group ').addClass('error_class');
     $('.modal_inner_content_3 .form-group p.error_message').remove();
-    $('.modal_inner_content_3 .form-group').append(`<p class="error_message">Please enter valid email address</p>`);
+    $('.modal_inner_content_3 .form-group').append(`<p class="error_message">Please enter valid work email</p>`);
     return;
   }
   $('#enter_your_email').hide();
