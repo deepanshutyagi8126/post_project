@@ -134,21 +134,21 @@ $(document).on('click', '.buget_curr ul li', function () {
   $(this).parent('ul').hide();
   $(this).parent('ul').siblings('.curr_dropdown').removeClass('slide_drop');
 });
-$(document).on('click','.bugget_checkbox .custom-checkbox label',function(){
-$(this)
-  .parents('.bugget_checkbox')
-  .siblings('.buget_details')
-  .find('.buget_details_in')
-  .removeClass('active max_height_width');
+$(document).on('click', '.bugget_checkbox .custom-checkbox label', function () {
   $(this)
-  .parents('.bugget_checkbox')
-  .siblings('.buget_details')
-  .find('.buget_details_in').find('input').val('');
+    .parents('.bugget_checkbox')
+    .siblings('.buget_details')
+    .find('.buget_details_in')
+    .removeClass('active max_height_width');
+  $(this)
+    .parents('.bugget_checkbox')
+    .siblings('.buget_details')
+    .find('.buget_details_in').find('input').val('');
   $('.buget_error_show').removeClass('error_class');
-   $('.buget_error_show').find('p.error_message').remove();
+  $('.buget_error_show').find('p.error_message').remove();
 });
 $(document).on('click', '.buget_details_in', function () {
-      $(".bugget_checkbox .custom-checkbox input").prop("checked", false);
+  $(".bugget_checkbox .custom-checkbox input").prop("checked", false);
   $('.buget_details_in').addClass('max_height_width').removeClass('active');
   $(this).removeClass('max_height_width').addClass('active');
   $('.buget_error_show.error_class p').remove();
@@ -381,79 +381,79 @@ $(document).on('click', '.footer_btns.last_step a.submit_your_req', function () 
   var buget_range_from = $('.buget_details_in.active input.form-control.from_range').val();
   var buget_range_to = $('.buget_details_in.active input.form-control.to_range').val();
   var addtional_comment = $('.addtional_comment textarea').val();
-var buget_var = $('.bugget_checkbox .custom-checkbox input').prop('checked');
+  var buget_var = $('.bugget_checkbox .custom-checkbox input').prop('checked');
   var skill_tags = [];
   $('ul.added_skill_tags li').each(function () {
     var skill = $(this).find('span.tag_name').text().trim();
     skill_tags.push(skill);
   });
-if (
-  project_title !== '' &&
-  projects_description !== '' &&
-  Work_nature !== '' &&
-  (
-    buget_var === true || 
+  if (
+    project_title !== '' &&
+    projects_description !== '' &&
+    Work_nature !== '' &&
     (
-      buget_details_in !== '' &&
-      buget_currency !== '' &&
-      buget_range_from !== '' &&
-      buget_range_to !== ''
+      buget_var === true ||
+      (
+        buget_details_in !== '' &&
+        buget_currency !== '' &&
+        buget_range_from !== '' &&
+        buget_range_to !== ''
+      )
     )
-  )
-) {
-  $('#enter_your_email').show();
-}
-else {
-
-  if (!project_title) {
-    $('.projects_title').addClass('error_class');
-    $('.projects_title p.error_message').remove();
-    $('.projects_title').append(`<p class="error_message">Please fill the project title.</p>`);
-  } else {
-    $('.projects_title').removeClass('error_class');
-    $('.projects_title p.error_message').remove();
+  ) {
+    $('#enter_your_email').show();
   }
+  else {
 
-  if (!projects_description) {
-    $('.projects_description').addClass('error_class');
-    $('.projects_description p.error_message').remove();
-    $('.projects_description').append(`<p class="error_message">Please fill the project description.</p>`);
-  } else {
-    $('.projects_description').removeClass('error_class');
-    $('.projects_description p.error_message').remove();
-  }
-
-  if (!buget_var) {
-
-    var $container = $('.buget_error_show');
-
-    $container.addClass('error_class');
-    $container.find('.error_message').remove();
-
-    if (!buget_details_in) {
-      $container.append('<p class="error_message">Please select a suitable budget.</p>');
-    } 
-    else if (!buget_currency || !buget_range_from || !buget_range_to) {
-      $container.append('<p class="error_message">Please fill all mandatory details.</p>');
+    if (!project_title) {
+      $('.projects_title').addClass('error_class');
+      $('.projects_title p.error_message').remove();
+      $('.projects_title').append(`<p class="error_message">Please fill the project title.</p>`);
+    } else {
+      $('.projects_title').removeClass('error_class');
+      $('.projects_title p.error_message').remove();
     }
 
-    $('.buget_details_in.active input.form-control').each(function () {
-      var value = $(this).val().trim();
+    if (!projects_description) {
+      $('.projects_description').addClass('error_class');
+      $('.projects_description p.error_message').remove();
+      $('.projects_description').append(`<p class="error_message">Please fill the project description.</p>`);
+    } else {
+      $('.projects_description').removeClass('error_class');
+      $('.projects_description p.error_message').remove();
+    }
 
-      if (value === '') {
-        $(this).addClass('empty_class');
-      } else {
-        $(this).removeClass('empty_class');
+    if (!buget_var) {
+
+      var $container = $('.buget_error_show');
+
+      $container.addClass('error_class');
+      $container.find('.error_message').remove();
+
+      if (!buget_details_in) {
+        $container.append('<p class="error_message">Please select a suitable budget.</p>');
       }
-    });
+      else if (!buget_currency || !buget_range_from || !buget_range_to) {
+        $container.append('<p class="error_message">Please fill all mandatory details.</p>');
+      }
 
-  } else {
-    $('.buget_error_show').removeClass('error_class');
-    $('.buget_error_show .error_message').remove();
-    $('.buget_details_in input').removeClass('empty_class');
+      $('.buget_details_in.active input.form-control').each(function () {
+        var value = $(this).val().trim();
+
+        if (value === '') {
+          $(this).addClass('empty_class');
+        } else {
+          $(this).removeClass('empty_class');
+        }
+      });
+
+    } else {
+      $('.buget_error_show').removeClass('error_class');
+      $('.buget_error_show .error_message').remove();
+      $('.buget_details_in input').removeClass('empty_class');
+    }
+
   }
-
-}
   var $firstError = $('.error_class:visible').first();
 
   if ($firstError.length > 0) {
@@ -615,5 +615,72 @@ $(document).on('click', 'a.all_comments', function () {
                                     placeholder="Enter additional comments"></textarea>`)
 });
 $(document).on("click", ".cancel_modal", function () {
-    $(this).closest(".modal").addClass('qwerty').hide();
+  $(this).closest(".modal").addClass('qwerty').hide();
+});
+$(document).on('click', '.boroad_skill_details h3', function () {
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    return;
+  }
+  $('.boroad_skill_details h3').removeClass('active');
+  $(this).addClass('active');
+});
+
+$(document).ready(function () {
+
+  var owl = $(".marketing_slider");
+
+  owl.owlCarousel({
+    loop: true,
+    margin: 15,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 1 },
+      1250: { items: 2 }
+    }
+  });
+
+  $(".next_btn").click(function () {
+    owl.trigger('next.owl.carousel');
+  });
+
+  $(".prev_btn").click(function () {
+    owl.trigger('prev.owl.carousel');
+  });
+
+});
+$(document).on('click', '.broad_div', function () {
+  var cureent_broad_skill = $(this).find('p').text().replace(/\s+/g, ' ').trim();;
+  if ($(this).hasClass('marketing_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('marketing_borad_skill broad_skill_box active ');
+  }
+  if ($(this).hasClass('human_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('Human_resorce_broad_skill broad_skill_box active ');
+  }
+  if ($(this).hasClass('finance_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('finance_broad_skill broad_skill_box active ');
+  }
+  if ($(this).hasClass('strategy_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('strategy_broad_skill broad_skill_box active ');
+  }
+  if ($(this).hasClass('information_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('information_technology broad_skill_box active ');
+  }
+    if ($(this).hasClass('other_broad')) {
+    $('.broad_skill_box')
+      .removeClass()
+      .addClass('other_broad broad_skill_box active ');
+  }
 });

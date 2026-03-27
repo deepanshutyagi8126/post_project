@@ -6,6 +6,10 @@
     <link href="images/logo.svg" rel="icon" type="icon/image">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -54,42 +58,94 @@
             </div>
         </div>
     </header>
-        <section>
+    <section>
         <div class="progressBar" style="background-color: #3EA283;"></div>
     </section>
     <section>
         <div class="home_section home_section_upload_2">
-            <div class="home_left upload_blocks">
-                <ul class="left_blocks">
-                    <li>
-                        <div class="each_block">
-                            <h2>Senior Energy Executive</h2>
-                            <p>30+ Years Experience | Delhi/NCR</p>
-                            <div class="all_expert_skill">
-                                <span>Enterprise sales</span>
-                                <span>Consulting</span>
-                                <span>+7</span>
+            <div class="home_left upload_blocks all_broad_skill_options">
+                <div class="left_side_inner">
+                    <div class="marketing_borad_skill broad_skill_box active">
+                        <div class="broad_inner_box">
+                            <h2>Top Marketing Skills</h2>
+                            <div class="all_boroad_skill_in">
+                                <div class="boroad_skill_details">
+                                    <h3 class="active">Brand Management </h3>
+                                    <div class="all_insight_selected">
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="boroad_skill_details">
+                                    <h3>30+ Years Experience | Delhi/NCR</h3>
+                                    <div class="all_insight_selected">
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="boroad_skill_details">
+                                    <h3>30+ Years Experience | Delhi/NCR</h3>
+                                    <div class="all_insight_selected">
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                        <span class="inside_skills">
+                                            Brand Alliances
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
-                            <h5>Recent Projects:</h5>
-                            <h6>International Energy Expansion, Global Technical Leadership, Strategic Consultancy</h6>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="each_block">
-                            <h2>Senior Energy Executive</h2>
-                            <p>30+ Years Experience | Delhi/NCR</p>
-                            <div class="all_expert_skill">
-                                <span>Enterprise sales</span>
-                                <span>Consulting</span>
-                                <span>+7</span>
+                            <div class="bulb_boxes">
+                                <img src="images/bulb.svg" alt="bulb">
+                                <h3>40% of marketing consultants in our talent network have 10+ years of experience</h3>
                             </div>
-                            <h5>Recent Projects:</h5>
-                            <h6>International Energy Expansion, Global Technical Leadership, Strategic Consultancy</h6>
+                            <div class="newly_posted_project">
+                                <!-- <h4>Recently posted Marketing projects:</h4> -->
+                                <div class="marketing_section">
+                                    <div class="header">
+                                        <h3>Recently posted <br> Marketing projects:</h3>
+                                        <div class="nav_btns">
+                                            <button class="prev_btn"><img src="images/recent_left.svg"
+                                                    alt="arrow"></button>
+                                            <button class="next_btn"><img src="images/recent_right.svg"
+                                                    alt="arrow"></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="owl-carousel marketing_slider">
+
+                                        <div class="card">
+                                            <h4>Performance Marketing Consultant (Gen-AI)</h4>
+                                            <p>Posted by A <br> Global FMCG Leader</p>
+                                        </div>
+
+                                        <div class="card">
+                                            <h4>Shopper Insights Consultant</h4>
+                                            <p>Posted by A <br> Global FMCG Leader</p>
+                                        </div>
+
+                                        <div class="card">
+                                            <h4>Digital Marketing Expert</h4>
+                                            <p>Posted by A <br> Startup Company</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+    
+                </div>
             </div>
-            <div class="home_right">
+            <div class="home_right all_broad_skill_options_right">
                 <h2 class="main_heading">Post an Opening <span>(1/2)</span></h2>
                 <div class="help_us_div">
                     <div class="upload_step_2">
@@ -97,7 +153,7 @@
                         <h5>Indicate the broad skill function</h5>
                         <div class="row broad_row">
                             <div class="col">
-                                <div class="broad_div marketing_broad">
+                                <div class="broad_div marketing_broad active">
                                     <span><img src="images/marketing.svg" alt="marketing"></span>
                                     <p>Marketing & <br>
                                         Sales</p>
@@ -255,18 +311,19 @@
                     </div>
                     <div class="footer_btns first_step new_added">
                         <div class="all_btns_clicked">
-                        <a href="index.html" class="footer_back">Back</a>
-                        <div class="footer_right_btn post_a_project_manually_btn">
-                            <!-- <a href="javascript:void(0)" class="footer_save">Save & Exit</a> -->
-                            <a href="javascript:void(0)" class="footer_next">Next: Project details</a>
+                            <a href="index.html" class="footer_back">Back</a>
+                            <div class="footer_right_btn post_a_project_manually_btn">
+                                <!-- <a href="javascript:void(0)" class="footer_save">Save & Exit</a> -->
+                                <a href="javascript:void(0)" class="footer_next">Next: Project details</a>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src='https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js'></script>
