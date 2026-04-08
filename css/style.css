@@ -308,7 +308,7 @@ span.filter {
 .home_left {
   width: 477px;
   height: 100%;
-  padding: 30px 10px 120px 100px;
+  padding: 30px 10px 120px 50px;
   /* padding-right: 20px; */
   background-image:
     linear-gradient(#1E2D4D80, #1E2D4D80),
@@ -322,7 +322,7 @@ span.filter {
 
 .home_left ul {
   counter-reset: item;
-  padding-right: 90px;
+  padding-right: 40px;
   height: 100%;
   overflow-y: auto;
 }
@@ -381,7 +381,7 @@ span.filter {
   background-color: #FFEECC4D;
   position: relative;
   border-radius: 20px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .started_box_right {
@@ -432,7 +432,7 @@ p.explore_project a:hover img {
 }
 
 .post_project_details {
-  margin-top: 25px;
+  margin-top: 10px;
   padding-bottom: 30px;
 }
 
@@ -466,13 +466,13 @@ p.explore_project a:hover img {
 }
 
 .all_file_upload_html {
-  height: 180px;
+  height: 150px;
   position: relative;
 }
 
 .dropzone-wrapper {
   position: relative;
-  height: 180px;
+  height: 150px;
   border-style: dashed;
   border: 2px dashed #1E2D4D33;
   border-radius: 20px;
@@ -505,7 +505,7 @@ p.explore_project a:hover img {
   position: absolute;
   outline: none !important;
   width: 100%;
-  height: 180px;
+  height: 150px;
   cursor: pointer;
   opacity: 0;
   top: 0;
@@ -635,7 +635,7 @@ span.impload_flex {
 
 .box-body {
   position: absolute;
-  height: 180px;
+  height: 150px;
   border-radius: 20px;
   padding: 10px;
   overflow: hidden;
@@ -708,7 +708,7 @@ img.btnClosed {
   box-shadow: 0px 4.67px 11.68px 0px #0000000F;
   border-radius: 30px;
   display: inline-block;
-  padding: 18px 30px;
+  padding: 15px 30px;
 }
 
 .submit_by_upload {
@@ -924,7 +924,7 @@ img.on_hover {
 }
 
 .row.broad_row {
-  padding-bottom: 60px;
+  padding-bottom: 35px;
   position: relative;
 }
 
@@ -946,6 +946,7 @@ img.on_hover {
   gap: 10px;
   width: 100%;
   background: #FFFFFF;
+  margin-bottom: 0;
 }
 
 
@@ -1003,7 +1004,7 @@ img.on_hover {
 }
 
 .level_of_exp {
-  padding-bottom: 60px;
+  padding-bottom: 35px;
 }
 
 .note {
@@ -1089,7 +1090,7 @@ img.on_hover {
 
 .projects_title,
 .skill_tags {
-  padding-bottom: 60px;
+  padding-bottom: 35px;
 }
 
 .skill_tags h5 {
@@ -1332,7 +1333,7 @@ span.tag_name {
 }
 
 .Broad_Skill_box {
-  padding-bottom: 60px;
+  padding-bottom: 35px;
   display: none;
   position: relative;
 }
@@ -2038,7 +2039,7 @@ p.error_message {
 .already_uploaded_file {
   position: relative;
   height: 100px;
-  margin: 30px 0px 30px 0px;
+  margin: 0px 0px 30px 0px;
 }
 
 .already_uploaded_file .box-body.box-body2 {
@@ -2090,9 +2091,9 @@ img.new_uploaded {
 }
 
 .home_section.home_section_upload_2 .upload_step_2 {
-  height: calc(100vh - 292px);
-  overflow-y: auto;
-  padding-right: 100px;
+    height: calc(100vh - 272px);
+    overflow-y: auto;
+    padding-right: 100px;
 }
 
 .home_section.home_section_upload_2 .upload_step_2::-webkit-scrollbar {
@@ -2117,7 +2118,7 @@ img.new_uploaded {
 .all_btns_clicked {
   display: flex;
   width: 100%;
-  padding: 30px 0px;
+  padding: 20px 0px;
   border-top: 1px solid #F2EFE8;
   justify-content: space-between;
   align-items: center;
@@ -2660,4 +2661,5 @@ a.all_comments span {
 .other_broad.broad_skill_box.active .newly_posted_project {
     display: none;
 }
+
 /* ********************* broad skill boxes code end  ********************** */

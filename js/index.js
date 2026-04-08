@@ -534,12 +534,13 @@ $(document).on('click', 'a.Send_otp', function (e) {
     return;
   }
   $('#enter_your_email').hide();
+    $('#enter_your_email').removeClass('show');
   $('#enter_your_otp').show();
 
 });
 $(document).on('click', '.submit_email', function (e) {
 
-  e.preventDefault();
+
   $('.modal_inner_content .form-group ').removeClass('error_class');
   var mail_val = $('.modal_inner_content input').val().trim();
   if (mail_val === '') {
@@ -616,6 +617,7 @@ $(document).on('click', 'a.all_comments', function () {
 });
 $(document).on("click", ".cancel_modal", function () {
   $(this).closest(".modal").addClass('qwerty').hide();
+  // $('.modal-backdrop').removeClass('show modal-backdrop');
 });
 $(document).on('click', '.boroad_skill_details h3', function () {
   if ($(this).hasClass('active')) {
@@ -684,3 +686,10 @@ $(document).on('click', '.broad_div', function () {
       .addClass('other_broad broad_skill_box active ');
   }
 });
+function resetModal() {
+    $('body').removeClass('modal-open');
+    $('body').css('padding-right', '');
+    $('.modal-backdrop').remove();
+}
+
+resetModal()

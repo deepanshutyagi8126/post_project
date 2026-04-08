@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/style.css?v=1.0" />
+<link rel="stylesheet" href="css/responsive.css?v=1.0" />
 </head>
 
 <body>
@@ -172,8 +172,38 @@
                 </div>
             </div>
         </div>
+                  <div class="modal" id="enter_your_otp">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close modal_closed cancel_modal" data-dismiss="modal"><img
+                                    src="images/modal_close.svg" alt="close"></button>
+                            <div class="modal_inner_content">
+                                <p>Enter your OTP to complete authentication &
+                                    access your dashboard</p>
+                                <div class="form-group">
+                                    <div class="otp_code">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                        <input type="text" maxlength="1" inputmode="numeric">
+                                    </div>
+                                    <p class="resend_para">Didn’t receive an OTP? <a href="javascript:void(0)">Resend</a></p>
+                                </div>
+                                <div class="modal_btns">
+                                    <a href="javascript:void(0)" data-dismiss="modal" class="cancel_btns cancel_modal">Cancel</a>
+                                    <a href="javascript:void(0)" class="otp_submit">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src='https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js'></script>
